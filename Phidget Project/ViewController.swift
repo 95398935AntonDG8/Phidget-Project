@@ -50,7 +50,7 @@ class ViewController: UIViewController {
             
             //address objects
             try led.setDeviceSerialNumber(528005)
-            try led.setHubPort(2)
+            try led2.setHubPort(2)
             try led.setIsHubPortDevice(true)
             
             try button0.setDeviceSerialNumber(528005)
