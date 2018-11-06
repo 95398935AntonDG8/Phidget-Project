@@ -1,12 +1,5 @@
-//
-//  ViewController.swift
-//  Phidget Project
-//
-//  Created by Anton Miguel de Guia on 2018-11-06.
-//  Copyright © 2018 Phidgets. All rights reserved.
-//
-
 import UIKit
+import Phidget22Swift
 
 class ViewController: UIViewController {
 

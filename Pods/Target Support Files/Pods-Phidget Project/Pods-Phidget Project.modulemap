@@ -1,0 +1,6 @@
+framework module Pods_Phidget_Project {
+  umbrella header "Pods-Phidget Project-umbrella.h"
+
+  export *
+  module * { export * }
+}
