@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     func attach_handler(sender: Phidget){
         do{
             if(try sender.getHubPort() == 0){
-                print("LED 3 Attached")
+                print("LED 2 Attached")
             }
             else{
                 print("Button 0 Attached")
@@ -28,11 +28,11 @@ class ViewController: UIViewController {
         do{
             if(state == true){
                 print("Button Pressed")
-                try led.setState(true)
+                try led2.setState(true)
             }
             else{
                 print("Button Not Pressed")
-                try led.setState(false)
+                try led2.setState(false)
             }
         } catch let err as PhidgetError{
             print("Phidget Error " + err.description)
@@ -49,9 +49,9 @@ class ViewController: UIViewController {
             try Net.enableServerDiscovery(serverType: .deviceRemote)
             
             //address objects
-            try led.setDeviceSerialNumber(528005)
+            try led2.setDeviceSerialNumber(528005)
             try led2.setHubPort(2)
-            try led.setIsHubPortDevice(true)
+            try led2.setIsHubPortDevice(true)
             
             try button0.setDeviceSerialNumber(528005)
             try button0.setHubPort(0)
@@ -62,7 +62,8 @@ class ViewController: UIViewController {
             try button1.setIsHubPortDevice(true)
             
             //add attach handlers
-            let _ = led.attach.addHandler(attach_handler)
+            let _ = led2.attach.addHandler(attach_handler)
+            let _ = led3.attach.addHandler(attach_handler)
             let _ = button0.attach.addHandler(attach_handler)
             let _ = button1.attach.addHandler(attach_handler)
             
