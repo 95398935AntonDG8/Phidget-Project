@@ -16,6 +16,12 @@ class ViewController: UIViewController {
             else{
                 print("Button 0 Attached")
             }
+            if(try sender.getHubPort() == 1){
+                print("LED 3 Attached")
+            }
+            else{
+                print("Button 1 Attached")
+            }
             
         } catch let err as PhidgetError{
             print("Phidget Error " + err.description)
@@ -34,6 +40,14 @@ class ViewController: UIViewController {
                 print("Button Not Pressed")
                 try led2.setState(false)
             }
+            if(state == false){
+                print("Button Pressed")
+                try led3.setState(true)
+            }
+            else{
+                print("Button Not Pressed")
+                try led3.setState(false)
+            }
         } catch let err as PhidgetError{
             print("Phidget Error " + err.description)
         } catch{
@@ -41,6 +55,12 @@ class ViewController: UIViewController {
         }
     }
 
+    @IBAction func P1(_ sender: UIButton) {
+    }
+    
+    @IBAction func P2(_ sender: UIButton) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,6 +72,10 @@ class ViewController: UIViewController {
             try led2.setDeviceSerialNumber(528005)
             try led2.setHubPort(2)
             try led2.setIsHubPortDevice(true)
+            
+            try led3.setDeviceSerialNumber(528005)
+            try led3.setHubPort(3)
+            try led3.setIsHubPortDevice(true)
             
             try button0.setDeviceSerialNumber(528005)
             try button0.setHubPort(0)
@@ -71,6 +95,11 @@ class ViewController: UIViewController {
             let _ = button0.stateChange.addHandler(state_change)
             let _ = button1.stateChange.addHandler(state_change)
             
+            //open objects
+            try button0.open()
+            try button1.open()
+            try led2.open()
+            try led3.open()
             
         } catch let err as PhidgetError {
             print("Phidget Error" + err.description)
