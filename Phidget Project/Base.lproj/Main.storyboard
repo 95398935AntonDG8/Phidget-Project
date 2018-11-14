@@ -24,20 +24,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peQ-Nm-deH">
-                                <rect key="frame" x="107" y="440" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="True"/>
-                                <connections>
-                                    <action selector="P1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mcc-HV-Jy6"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1Z-tN-Ek9">
-                                <rect key="frame" x="226" y="440" width="36" height="30"/>
+                                <rect key="frame" x="219" y="440" width="51" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="False"/>
+                                <state key="normal" title="Player2"/>
                                 <connections>
                                     <action selector="P2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AgC-Gp-XFe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peQ-Nm-deH">
+                                <rect key="frame" x="94" y="440" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Player1"/>
+                                <connections>
+                                    <action selector="P1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mcc-HV-Jy6"/>
                                 </connections>
                             </button>
                         </subviews>

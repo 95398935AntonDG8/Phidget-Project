@@ -11,16 +11,17 @@ class ViewController: UIViewController {
     func attach_handler(sender: Phidget){
         do{
             if(try sender.getHubPort() == 0){
-                print("LED 2 Attached")
+                print("led2 Attached")
             }
             else{
-                print("Button 0 Attached")
+                print("button0 Attached")
             }
+            
             if(try sender.getHubPort() == 1){
-                print("LED 3 Attached")
+                print("led3 Attached")
             }
             else{
-                print("Button 1 Attached")
+                print("button1 Attached")
             }
             
         } catch let err as PhidgetError{
@@ -30,7 +31,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func state_change(sender:DigitalInput, state:Bool){
+    func state_change_button1(sender: DigitalInput, state: Bool){
         do{
             if(state == true){
                 print("Button Pressed")
@@ -40,7 +41,18 @@ class ViewController: UIViewController {
                 print("Button Not Pressed")
                 try led2.setState(false)
             }
-            if(state == false){
+            
+        } catch let err as PhidgetError{
+            print("Phidget Error " + err.description)
+        } catch{
+            //catch other errors here
+        }
+    }
+    
+    func state_change_button0(sender: DigitalInput, state: Bool){
+        do{
+            
+            if(state == true){
                 print("Button Pressed")
                 try led3.setState(true)
             }
@@ -48,6 +60,7 @@ class ViewController: UIViewController {
                 print("Button Not Pressed")
                 try led3.setState(false)
             }
+            
         } catch let err as PhidgetError{
             print("Phidget Error " + err.description)
         } catch{
@@ -92,8 +105,8 @@ class ViewController: UIViewController {
             let _ = button1.attach.addHandler(attach_handler)
             
             //add state change handler
-            let _ = button0.stateChange.addHandler(state_change)
-            let _ = button1.stateChange.addHandler(state_change)
+            let _ = button0.stateChange.addHandler(state_change_button1)
+            let _ = button1.stateChange.addHandler(state_change_button0)
             
             //open objects
             try button0.open()
